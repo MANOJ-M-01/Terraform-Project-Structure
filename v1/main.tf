@@ -1,11 +1,11 @@
 provider "aws" {
-  profile = "manoj_admin"
-  region  = "us-east-2"
+  profile = var.profile
+  region  = var.region
 }
 
 
 resource "aws_vpc" "main" {
-  cidr_block           = "10.0.0.0/16"
+  cidr_block           = var.vpc_cidr
   enable_dns_support   = false
   enable_dns_hostnames = false
 
