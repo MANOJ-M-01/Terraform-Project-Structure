@@ -1,0 +1,12 @@
+provider "aws" {
+  profile = "manoj_admin"
+  region  = var.region
+}
+
+
+module "subnet" {
+  source     = "../../../modules/subnet"
+  vpc_id     = data.terraform_remote_state.vpc.outputs.vpc_id
+  env        = "dev"
+  cidr_block = "10.0.0.0/16"
+}
