@@ -7,13 +7,15 @@ resource "aws_subnet" "private" {
 }
 
 
-data "terraform_remote_state" "vpc" {
-  backend = "local"
-  config = {
-    path = "../vpc/terraform.tfstate"
-  }
-}
+# moved to separate file
+# data "terraform_remote_state" "vpc" {
+#   backend = "local"
+#   config = {
+#     path = "../vpc/terraform.tfstate"
+#   }
+# }
 
+# for debuging 
 # output "vpc" {
 #   description = "vpc details"
 #   value       = data.terraform_remote_state.vpc
